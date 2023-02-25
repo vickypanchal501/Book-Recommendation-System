@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop-Down menu Design - Easy </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="manu-bar">
+        <ul>
+            <li class="active"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i>About US</a></li>
+            <li><a href="/recommend"><i class="fa fa-edit" aria-hidden="true"></i>Recommend</a></li>
+            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contect US</a></li>
+        </ul>
+
+
+    </div>
+
+    <div class="container my-4">
+        <h1>Recommend Books</h1>
+        <hr>
+        <form id="libraryForm" action="/recommend_books" method="post">
+            <div class="form-group row">
+                <label for="bookName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input name="user_input" type="text" class="form-control" id="bookName" placeholder="Book Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+
+
+
+        <div class="container">
+            <div class="row">
+                <br>
+                {% if data %}
+                {% for i in data %}
+                <!--Profile Card 5-->
+                <div class="col-md-3 mt-3">
+                    <div class="card profile-card-5">
+                        <div class="card-img-block">
+                            <img class="card-img-top" src="{{i[2]}}" alt="Card image ">
+                        </div>
+                        <br>
+                        <div class="card-body pt-1">
+                            <h5 class="card-title">{{i[0] | safe | truncate(30)}}</h5>
+                            <p class="card-text">{{i[1] | safe}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>no data </p>
+                {% endif %}
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-image: url('363\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    height: 65rem;
+}
+.manu-bar{
+    background: cadetblue;
+    text-align: center;
+    height: 70px;
+
+}
+.manu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+.manu-bar ul li{
+    width: 150px;
+    margin: 15px;
+    padding: 10px;
+}
+.manu-bar ul li a{
+    text-decoration: none;
+    color: #ffff;
+}
+.active, .manu-bar ul li:hover{
+    background: rgb(67, 180, 180);
+    border-radius: 3px;
+}
+.manu-bar .fa{
+    margin-right: 8px;
+}
+.sub-manu-1{
+    display: none;
+
+}
+.manu-bar ul li:hover .sub-manu-1{
+    display: block;
+    position: absolute;
+    background:  rgb(67, 180, 180);
+    margin-top: 11px;
+    margin-left: 15px;
+
+}
+.manu-bar ul li:hover .sub-manu-1 ul{
+display: block;
+margin: 10px;
+
+}
+.manu-bar ul li:hover .sub-manu-1 ul li{
+width: 150px;
+padding: 10px;
+border-bottom: 1px dotted #ffff;
+background: transparent;
+border-radius: 0;
+text-align: left;
+}
+.manu-bar ul li:hover .sub-manu-1 ul li:last-child{
+    border-bottom: none;
+}
+.manu-bar ul li:hover .sub-manu-1 ul li a:hover{
+    color: yellowgreen;
+}
+.fa-angle-right{
+    float: right;
+}
+.sub-manu-2{
+    display: none;
+}
+.hover-me:hover .sub-manu-2{
+position: absolute;
+display: block;
+margin-top: -20px;
+margin-left: 160px;
+background: rgb(67, 180, 180);
+}
+@media only screen and (max-width: 1211px){
+    .manu-bar ul li {
+        width: 30px;
+    }
+
+}
+
+
+
+
+/*Profile Card 5*/
+.profile-card-5{
+    margin-top:20px;
+}
+.profile-card-5 .btn{
+    border-radius:2px;
+    text-transform:uppercase;
+    font-size:12px;
+    padding:7px 20px;
+}
+.profile-card-5 .card-img-block {
+    width: 91%;
+    margin: 0 auto;
+    position: relative;
+    top: -20px;
+    
+}
+.profile-card-5 .card-img-block img{
+    border-radius:5px;
+    size: 10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.63);
+    max-height: 360px;
+}
+.profile-card-5 h5{
+    color:#4E5E30;
+    font-weight:600;
+}
+.profile-card-5 p{
+    font-size:14px;
+    font-weight:300;
+}
+.profile-card-5 .btn-primary{
+    background-color:#4E5E30;
+    border-color:#4E5E30;
+}
+.mt-4, .my-4 {
+    margin-top: 1.5rem!important;
+}
+.col-md-4 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
